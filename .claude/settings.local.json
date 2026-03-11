@@ -8,7 +8,8 @@
       "Bash(cd /tmp && yes \"\" | npx create-next-app@latest sdd-temp --typescript --tailwind --eslint --app --src-dir --no-import-alias --use-npm 2>&1)",
       "Bash(cp /tmp/sdd-temp/package.json /tmp/sdd-temp/package-lock.json /tmp/sdd-temp/tsconfig.json /tmp/sdd-temp/next.config.ts /tmp/sdd-temp/postcss.config.mjs /tmp/sdd-temp/eslint.config.mjs /tmp/sdd-temp/next-env.d.ts /home/nebulide/workspaces/Nassif107/dev/work/sdd-navigator/ && cp -r /tmp/sdd-temp/node_modules /home/nebulide/workspaces/Nassif107/dev/work/sdd-navigator/ && cp -r /tmp/sdd-temp/public /home/nebulide/workspaces/Nassif107/dev/work/sdd-navigator/ && cp -r /tmp/sdd-temp/src /home/nebulide/workspaces/Nassif107/dev/work/sdd-navigator/)",
       "Bash(npm install:*)",
-      "Bash(npx tsc:*)"
+      "Bash(npx tsc:*)",
+      "Bash(node -e \"\nconst a = require\\('./src/data/annotations.json'\\);\nconst impl = a.filter\\(x => x.type === 'impl'\\).length;\nconst test = a.filter\\(x => x.type === 'test'\\).length;\nconsole.log\\('impl:', impl, 'test:', test\\);\n\")"
     ]
   }
 }

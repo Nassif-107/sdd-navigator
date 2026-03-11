@@ -1,0 +1,74 @@
+[
+  {
+    "id": "FR-SCAN-001",
+    "type": "FR",
+    "title": "File system scanner",
+    "description": "Scanner MUST recursively traverse project directories and identify source files for annotation extraction.",
+    "status": "covered",
+    "createdAt": "2025-01-10T09:00:00Z",
+    "updatedAt": "2025-01-20T14:30:00Z"
+  },
+  {
+    "id": "FR-SCAN-002",
+    "type": "FR",
+    "title": "Annotation parser",
+    "description": "Parser MUST extract @req annotations from source files and map them to requirement IDs.",
+    "status": "covered",
+    "createdAt": "2025-01-10T09:00:00Z",
+    "updatedAt": "2025-01-22T11:00:00Z"
+  },
+  {
+    "id": "FR-SCAN-003",
+    "type": "FR",
+    "title": "Orphan detection",
+    "description": "Scanner MUST detect annotations referencing non-existent requirement IDs and flag them as orphans.",
+    "status": "partial",
+    "createdAt": "2025-01-11T10:00:00Z",
+    "updatedAt": "2025-02-01T16:45:00Z"
+  },
+  {
+    "id": "FR-API-001",
+    "type": "FR",
+    "title": "Requirements REST endpoint",
+    "description": "API MUST expose GET /requirements returning a filtered, sorted list of requirements.",
+    "status": "covered",
+    "createdAt": "2025-01-12T08:00:00Z",
+    "updatedAt": "2025-01-25T09:15:00Z"
+  },
+  {
+    "id": "FR-API-002",
+    "type": "FR",
+    "title": "Stats aggregation endpoint",
+    "description": "API MUST expose GET /stats returning requirement, annotation, and task statistics with coverage percentage.",
+    "status": "covered",
+    "createdAt": "2025-01-12T08:00:00Z",
+    "updatedAt": "2025-01-28T10:00:00Z"
+  },
+  {
+    "id": "FR-API-003",
+    "type": "FR",
+    "title": "Scan trigger endpoint",
+    "description": "API MUST expose POST /scan to trigger a re-scan and GET /scan to poll scan status.",
+    "status": "missing",
+    "createdAt": "2025-01-15T12:00:00Z",
+    "updatedAt": "2025-01-15T12:00:00Z"
+  },
+  {
+    "id": "AR-PERF-001",
+    "type": "AR",
+    "title": "Response time SLA",
+    "description": "All API endpoints MUST respond within 500ms for projects with up to 1000 requirements.",
+    "status": "covered",
+    "createdAt": "2025-01-13T14:00:00Z",
+    "updatedAt": "2025-02-05T08:30:00Z"
+  },
+  {
+    "id": "AR-SEC-001",
+    "type": "AR",
+    "title": "Input validation",
+    "description": "API MUST validate and sanitize all query parameters. Invalid values MUST return 400 with a typed error.",
+    "status": "partial",
+    "createdAt": "2025-01-14T11:00:00Z",
+    "updatedAt": "2025-02-10T13:20:00Z"
+  }
+]

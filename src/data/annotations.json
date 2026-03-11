@@ -1,0 +1,114 @@
+[
+  {
+    "file": "src/scanner/index.ts",
+    "line": 12,
+    "reqId": "FR-SCAN-001",
+    "type": "impl",
+    "snippet": "export function scanDirectory(root: string): ScanResult {"
+  },
+  {
+    "file": "src/scanner/index.ts",
+    "line": 45,
+    "reqId": "FR-SCAN-001",
+    "type": "impl",
+    "snippet": "function traverseFiles(dir: string, extensions: string[]): string[] {"
+  },
+  {
+    "file": "tests/scanner/index.test.ts",
+    "line": 8,
+    "reqId": "FR-SCAN-001",
+    "type": "test",
+    "snippet": "describe('scanDirectory', () => {"
+  },
+  {
+    "file": "src/scanner/parser.ts",
+    "line": 5,
+    "reqId": "FR-SCAN-002",
+    "type": "impl",
+    "snippet": "export function parseAnnotations(content: string): Annotation[] {"
+  },
+  {
+    "file": "src/scanner/parser.ts",
+    "line": 30,
+    "reqId": "FR-SCAN-002",
+    "type": "impl",
+    "snippet": "function extractReqId(line: string): string | null {"
+  },
+  {
+    "file": "tests/scanner/parser.test.ts",
+    "line": 6,
+    "reqId": "FR-SCAN-002",
+    "type": "test",
+    "snippet": "describe('parseAnnotations', () => {"
+  },
+  {
+    "file": "src/scanner/orphans.ts",
+    "line": 3,
+    "reqId": "FR-SCAN-003",
+    "type": "impl",
+    "snippet": "export function detectOrphans(annotations: Annotation[], requirements: string[]): Annotation[] {"
+  },
+  {
+    "file": "src/api/routes/requirements.ts",
+    "line": 10,
+    "reqId": "FR-API-001",
+    "type": "impl",
+    "snippet": "router.get('/requirements', async (req, res) => {"
+  },
+  {
+    "file": "src/api/routes/requirements.ts",
+    "line": 35,
+    "reqId": "FR-API-001",
+    "type": "impl",
+    "snippet": "function applyFilters(requirements: Requirement[], filters: RequirementFilters): Requirement[] {"
+  },
+  {
+    "file": "tests/api/requirements.test.ts",
+    "line": 7,
+    "reqId": "FR-API-001",
+    "type": "test",
+    "snippet": "describe('GET /requirements', () => {"
+  },
+  {
+    "file": "src/api/routes/stats.ts",
+    "line": 8,
+    "reqId": "FR-API-002",
+    "type": "impl",
+    "snippet": "router.get('/stats', async (req, res) => {"
+  },
+  {
+    "file": "src/api/stats/aggregator.ts",
+    "line": 4,
+    "reqId": "FR-API-002",
+    "type": "impl",
+    "snippet": "export function aggregateStats(data: ProjectData): Stats {"
+  },
+  {
+    "file": "tests/api/stats.test.ts",
+    "line": 5,
+    "reqId": "FR-API-002",
+    "type": "test",
+    "snippet": "describe('GET /stats', () => {"
+  },
+  {
+    "file": "tests/api/performance.test.ts",
+    "line": 10,
+    "reqId": "AR-PERF-001",
+    "type": "test",
+    "snippet": "describe('response time SLA', () => {"
+  },
+  {
+    "file": "src/api/middleware/sanitize.ts",
+    "line": 3,
+    "reqId": "UNKNOWN-001",
+    "type": "impl",
+    "snippet": "export function sanitizeInput(params: Record<string, string>): Record<string, string> {"
+  },
+  {
+    "file": "tests/api/sanitize.test.ts",
+    "line": 4,
+    "reqId": "UNKNOWN-002",
+    "type": "test",
+    "snippet": "describe('sanitizeInput', () => {"
+  }
+]
