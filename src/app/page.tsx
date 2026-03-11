@@ -1,7 +1,10 @@
-export default function Home() {
-  return (
-    <main className="flex min-h-screen items-center justify-center">
-      <h1 className="text-2xl font-semibold">SDD Navigator</h1>
-    </main>
-  );
+import { getStats } from "@/lib/api";
+import { DashboardContent } from "@/components/dashboard-content";
+
+// @req SCD-UI-001
+// @req SCD-ERR-001
+export default async function Home() {
+  const result = await getStats();
+
+  return <DashboardContent result={result} />;
 }
