@@ -55,6 +55,7 @@ DO NOT duplicate spec content. Reference by path or ID.
 ### Code Quality
 - One concern per file — no mixed responsibilities
 - No business logic in page files — pages compose components only
+- Server Components for data loading; Client Components for interactivity
 - Functions MUST NOT exceed 100 lines
 - No unused imports, variables, or dead code
 - Prefer named exports over default exports
@@ -64,7 +65,7 @@ DO NOT duplicate spec content. Reference by path or ID.
 - Directive vocabulary: MUST, SHOULD, MAY, DO NOT
 - Dependencies MUST be minimal and justified
 - No boilerplate abstractions or unused modules
-- README MUST be concise and factual
+- README MUST be concise and factual, containing: app description, local run instructions, deployment instructions
 
 ### Conventions
 - Commit format: `type(scope): message [SCD-*]`
@@ -100,4 +101,11 @@ e2e/                     # Playwright E2E tests
 - `requirements.yaml` with descriptions on every entry
 - Mock data files (8+ requirements, 16+ annotations, 6+ tasks)
 - Deployed live URL in README.md
-- `PROCESS.md` (AI development process documentation)
+- `PROCESS.md` (AI development process documentation) with sections:
+  1. Tools Used — AI tools (IDE, model, plugins) and usage purpose
+  2. Conversation Log — Per session: timestamps, topic, requests, accepted/rejected items
+  3. Timeline — Chronological major steps with timestamps and duration
+  4. Key Decisions — Architectural choices with alternatives considered
+  5. What Developer Controlled — Files, functions, config reviewed/tested/rewritten; verification steps
+  6. Course Corrections — Issues identified, how caught, resolution taken
+  7. Self-Assessment — SDD pillar coverage (Traceability, DRY, Deterministic Enforcement, Parsimony)

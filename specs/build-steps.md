@@ -25,7 +25,7 @@ Every commit MUST reference requirement IDs.
 ---
 
 ## Step 3: Mock Data
-- Create `src/data/requirements.json` — 8 requirements (FR + AR, varied statuses)
+- Create `src/data/requirements.json` — 8 requirements: FR-SCAN-001, FR-SCAN-002, FR-SCAN-003, FR-API-001, FR-API-002, FR-API-003, AR-PERF-001, AR-SEC-001 (6 FR + 2 AR, varied statuses: covered/partial/missing)
 - Create `src/data/annotations.json` — 16 annotations (14 linked + 2 orphans, impl + test)
 - Create `src/data/tasks.json` — 6 tasks (5 linked + 1 orphan, varied statuses)
 - Create `src/data/stats.json` — computed from above (coverage 62.5%)
