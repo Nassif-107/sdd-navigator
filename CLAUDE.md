@@ -32,6 +32,7 @@ DO NOT duplicate spec content. Reference by path or ID.
 - Every code file that implements behavior MUST have a `// @req SCD-*` comment linking to its requirement
 - Every test file MUST reference its requirement ID with `// @req SCD-*`
 - Every commit MUST reference a requirement ID: `type(scope): message [SCD-*]`
+- @req tags MUST be placed on the function or component they trace, not grouped at the top of the file
 - No dead code — code without a linked requirement MUST be removed
 - No unimplemented requirements — every SCD-* ID MUST appear in code
 

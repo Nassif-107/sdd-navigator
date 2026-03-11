@@ -1,7 +1,6 @@
-// @req SCD-API-001
-
 import type { RequirementType, CoverageStatus, TaskStatus } from "./enums";
 
+// @req SCD-API-001
 export interface Stats {
   requirements: {
     total: number;

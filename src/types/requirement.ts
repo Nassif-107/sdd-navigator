@@ -1,10 +1,8 @@
-// @req SCD-API-002
-// @req SCD-API-003
-
 import type { RequirementType, CoverageStatus } from "./enums";
 import type { Annotation } from "./annotation";
 import type { Task } from "./task";
 
+// @req SCD-API-002
 export interface Requirement {
   id: string;
   type: RequirementType;
@@ -15,6 +13,7 @@ export interface Requirement {
   updatedAt: string;
 }
 
+// @req SCD-API-003
 export interface RequirementDetail extends Requirement {
   annotations: Annotation[];
   tasks: Task[];

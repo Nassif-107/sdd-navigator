@@ -1,7 +1,6 @@
-// @req SCD-API-005
-
 import type { TaskStatus } from "./enums";
 
+// @req SCD-API-005
 export interface Task {
   id: string;
   requirementId: string;

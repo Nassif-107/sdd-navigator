@@ -36,14 +36,14 @@ Every commit MUST reference requirement IDs.
 ---
 
 ## Step 4: API Client [SCD-API-001..006]
-- Create `lib/api.ts` with typed functions:
-  - `getStats()` → Stats
-  - `listRequirements(filters?)` → Requirement[]
-  - `getRequirement(id)` → RequirementDetail
-  - `listAnnotations(filters?)` → Annotation[]
-  - `listTasks(filters?)` → Task[]
-  - `triggerScan()` → ScanStatus
-  - `getScanStatus()` → ScanStatus
+- Create `lib/api.ts` with typed functions; each MUST have its own `// @req SCD-*` comment directly above it:
+  - `getStats()` → Stats — `// @req SCD-API-001`
+  - `listRequirements(filters?)` → Requirement[] — `// @req SCD-API-002`
+  - `getRequirement(id)` → RequirementDetail — `// @req SCD-API-003`
+  - `listAnnotations(filters?)` → Annotation[] — `// @req SCD-API-004`
+  - `listTasks(filters?)` → Task[] — `// @req SCD-API-005`
+  - `triggerScan()` → ScanStatus — `// @req SCD-API-006`
+  - `getScanStatus()` → ScanStatus — `// @req SCD-API-006`
 - If `NEXT_PUBLIC_API_URL` set → fetch from API
 - If unset → import from `src/data/*.json`
 - Typed error handling for network failures, 404s, malformed responses
