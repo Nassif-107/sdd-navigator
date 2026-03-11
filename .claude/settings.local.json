@@ -17,7 +17,8 @@
       "Bash(npx jest:*)",
       "Bash(PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH=/usr/bin/chromium-browser npx playwright test e2e/error-states.spec.ts e2e/responsive.spec.ts --reporter=list 2>&1)",
       "Bash(PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH=/usr/bin/chromium-browser npx playwright test --reporter=list 2>&1)",
-      "Bash(npx next:*)"
+      "Bash(npx next:*)",
+      "WebFetch(domain:api.pdd.foreachpartners.com)"
     ]
   }
 }

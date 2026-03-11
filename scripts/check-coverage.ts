@@ -13,7 +13,7 @@ const SCAN_DIRS = [
   path.join(ROOT, "e2e"),
   path.join(ROOT, "scripts"),
 ];
-const SOURCE_EXTENSIONS = [".ts", ".tsx"];
+const SOURCE_EXTENSIONS = [".ts", ".tsx", ".md"];
 
 function parseRequirementIds(yamlPath: string): string[] {
   const content = fs.readFileSync(yamlPath, "utf-8");
@@ -77,7 +77,7 @@ function isTestFile(filePath: string): boolean {
 }
 
 function isSourceFile(filePath: string): boolean {
-  return filePath.startsWith("src/") || filePath.startsWith("scripts/");
+  return filePath.startsWith("src/") || filePath.startsWith("scripts/") || filePath.endsWith(".md");
 }
 
 // --- Main ---
@@ -88,7 +88,11 @@ if (reqIds.length === 0) {
   process.exit(1);
 }
 
-const allFiles = SCAN_DIRS.flatMap(collectFiles);
+// Also scan root-level .md files (e.g. README.md)
+const rootMdFiles = fs.readdirSync(ROOT)
+  .filter((f) => f.endsWith(".md"))
+  .map((f) => path.join(ROOT, f));
+const allFiles = [...SCAN_DIRS.flatMap(collectFiles), ...rootMdFiles];
 const allRefs = scanForRefs(allFiles);
 
 console.log("=== SDD Traceability Report ===\n");
