@@ -62,11 +62,12 @@ export function RequirementsTable() {
     [sort, order, updateParams],
   );
 
+  const paramsKey = searchParams.toString();
   useEffect(() => {
     let cancelled = false;
-    setLoading(true);
 
     async function fetchData() {
+      setLoading(true);
       const filters: RequirementFilters = {
         type: typeFilters.length === 1 ? typeFilters[0] : undefined,
         status: statusFilters.length === 1 ? statusFilters[0] : undefined,
@@ -93,7 +94,8 @@ export function RequirementsTable() {
 
     fetchData();
     return () => { cancelled = true; };
-  }, [searchParams]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [paramsKey]);
 
   if (error) {
     return (
