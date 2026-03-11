@@ -3,6 +3,7 @@
 import type { Stats, ApiError } from "@/types";
 import type { ApiResult } from "@/lib/api";
 import { SummaryPanel } from "./summary-panel";
+import { ScanButton } from "./scan-button";
 
 // @req SCD-UI-001
 // @req SCD-ERR-001
@@ -13,7 +14,10 @@ export function DashboardContent({ result }: { result: ApiResult<Stats> }) {
 
   return (
     <div>
-      <h1 className="mb-6 text-2xl font-semibold">Dashboard</h1>
+      <div className="mb-6 flex items-center justify-between">
+        <h1 className="text-2xl font-semibold">Dashboard</h1>
+        <ScanButton />
+      </div>
       <SummaryPanel stats={result.data} />
     </div>
   );
