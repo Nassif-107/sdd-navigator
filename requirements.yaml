@@ -1,0 +1,108 @@
+- id: SCD-API-001
+  title: Fetch project stats from /stats
+  description: >
+    Dashboard MUST fetch RequirementStats, AnnotationStats, and TaskStats
+    from GET /stats on initial load. MUST work in API mode (NEXT_PUBLIC_API_URL)
+    and mock mode (local JSON fallback).
+
+- id: SCD-API-002
+  title: List requirements with filters and sorting
+  description: >
+    MUST call GET /requirements with optional type (FR/AR), status
+    (covered/partial/missing), sort (id/updatedAt), and order (asc/desc).
+    Filters MUST sync to URL query params.
+
+- id: SCD-API-003
+  title: Fetch single requirement detail
+  description: >
+    MUST call GET /requirements/{id} and return RequirementDetail
+    with linked annotations and tasks. MUST handle 404 with typed error.
+
+- id: SCD-API-004
+  title: List annotations with filters
+  description: >
+    MUST call GET /annotations with optional type (impl/test) and
+    orphans (boolean) params.
+
+- id: SCD-API-005
+  title: List tasks with filters and sorting
+  description: >
+    MUST call GET /tasks with optional status, orphans, sort, and order params.
+
+- id: SCD-API-006
+  title: Trigger and poll scan status
+  description: >
+    MUST call POST /scan to trigger re-scan and GET /scan to poll status.
+    MUST display scan status (idle/scanning/completed/failed).
+
+- id: SCD-UI-001
+  title: Summary panel with project stats
+  description: >
+    MUST display total requirements, breakdown by type (FR/AR), breakdown
+    by coverage status with visual bars, overall coverage percentage with
+    progress indicator, annotation orphan and task orphan counts with
+    warning indicators, and lastScanAt timestamp.
+
+- id: SCD-UI-002
+  title: Requirements table with sorting and filtering
+  description: >
+    MUST display columns: ID, type, title, status, updatedAt. MUST support
+    sorting by ID or updatedAt with asc/desc toggle. MUST support filtering
+    by type (FR/AR) and status (covered/partial/missing) via multi-select chips.
+    Filters MUST sync to URL query params for shareable views.
+    MUST show empty state when no results match.
+
+- id: SCD-UI-003
+  title: Requirement detail view
+  description: >
+    MUST display all fields: id, type, title, description, status, createdAt,
+    updatedAt. MUST show linked annotations with file path, line number,
+    type (impl/test), and code snippet. MUST show linked tasks with id, title,
+    status, assignee, updatedAt. MUST show coverage label: "Fully covered" /
+    "Needs tests" / "Not implemented". Navigation back to table MUST preserve
+    current filters.
+
+- id: SCD-UI-004
+  title: Tasks panel
+  description: >
+    MUST list all tasks from GET /tasks with columns: ID, requirement ID,
+    title, status, assignee. MUST filter by task status (open/in_progress/done).
+    Orphan tasks MUST be highlighted distinctly.
+
+- id: SCD-UI-005
+  title: Orphan panel
+  description: >
+    MUST display collapsible section for annotation orphans showing file, line,
+    unknown reqId, type. MUST display subsection for task orphans showing id,
+    title, unknown requirementId.
+
+- id: SCD-UI-006
+  title: Dark/light theme toggle
+  description: >
+    MUST toggle between dark and light themes. Selection MUST persist in
+    localStorage. MUST respect prefers-color-scheme on first visit.
+
+- id: SCD-UI-007
+  title: Responsive layout
+  description: >
+    MUST render table layout on desktop and card layout on mobile.
+    Breakpoint SHOULD follow Tailwind defaults.
+
+- id: SCD-ACC-001
+  title: Accessibility compliance
+  description: >
+    MUST use semantic HTML. Tables MUST be keyboard-navigable. Sortable
+    columns MUST have aria-sort attribute. Colors MUST meet WCAG AA contrast.
+
+- id: SCD-ERR-001
+  title: Error and loading states
+  description: >
+    MUST display loading indicator during data fetches. MUST display typed
+    error messages for network failures, 404s, and malformed responses.
+    DO NOT throw exceptions for expected failures.
+
+- id: SCD-DEP-001
+  title: Production deployment
+  description: >
+    MUST deploy to Vercel, Netlify, or equivalent. Live URL MUST be in README.md.
+    next build MUST pass without errors.
