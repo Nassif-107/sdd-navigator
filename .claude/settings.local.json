@@ -18,7 +18,8 @@
       "Bash(PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH=/usr/bin/chromium-browser npx playwright test e2e/error-states.spec.ts e2e/responsive.spec.ts --reporter=list 2>&1)",
       "Bash(PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH=/usr/bin/chromium-browser npx playwright test --reporter=list 2>&1)",
       "Bash(npx next:*)",
-      "WebFetch(domain:api.pdd.foreachpartners.com)"
+      "WebFetch(domain:api.pdd.foreachpartners.com)",
+      "Bash(cd /root/.claude/projects/-home-nebulide-workspaces-Nassif107-dev-work-sdd-navigator && python3 -c \"\nimport json\n\nwith open\\('4740b37d-24c8-46a9-944f-17096ff1d780.jsonl', 'r'\\) as f:\n    for i, line in enumerate\\(f, 1\\):\n        if i == 80:\n            obj = json.loads\\(line.strip\\(\\)\\)\n            msg = obj.get\\('message', {}\\)\n            content = msg.get\\('content', ''\\)\n            print\\(content\\)\n\" 2>&1)"
     ]
   }
 }
