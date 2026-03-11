@@ -20,7 +20,7 @@ Every commit MUST reference requirement IDs.
 - Create `src/types/` with all models from specs/data-model.md
 - Single entry point `src/types/index.ts`
 - All types MUST use named exports
-- **Commit:** `feat(types): define shared type definitions [SCD-API-001]`
+- **Commit:** `feat(types): define shared type definitions [SCD-API-001] [SCD-API-002] [SCD-API-003] [SCD-API-004] [SCD-API-005] [SCD-API-006]`
 
 ---
 
@@ -31,7 +31,7 @@ Every commit MUST reference requirement IDs.
 - Create `src/data/stats.json` — computed from above (coverage 62.5%)
 - Create `src/data/scan.json` — idle scan status
 - All MUST conform to types in `src/types/`
-- **Commit:** `feat(data): add mock data files [SCD-API-001]`
+- **Commit:** `feat(data): add mock data files [SCD-API-001] [SCD-API-002] [SCD-API-003] [SCD-API-004] [SCD-API-005] [SCD-API-006]`
 
 ---
 
